@@ -230,9 +230,9 @@ animation = &"coin"
 position = Vector2(376, 275)
 scale = Vector2(5.28, 5.12)
 
-[node name="sellzone" parent="." instance=ExtResource("7_s5slq")]
-position = Vector2(152, 520)
-scale = Vector2(1.98565, 2.2)
-
 [node name="player" parent="." instance=ExtResource("2_t3ywc")]
 position = Vector2(121, 72)
+
+[node name="sellzone" parent="." instance=ExtResource("7_s5slq")]
+position = Vector2(140, 509)
+scale = Vector2(2.6, 2.56)

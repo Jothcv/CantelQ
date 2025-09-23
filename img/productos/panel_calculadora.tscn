@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8el1tsrwiwj4"]
+
+[ext_resource type="Script" uid="uid://dbs8hh4rn4a8o" path="res://scripts/panel_calculadora.gd" id="1_rbqlr"]
+
+[node name="PanelCalculadora" type="Panel"]
+offset_right = 303.0
+offset_bottom = 398.0
+script = ExtResource("1_rbqlr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 295.0
+offset_bottom = 357.0
+
+[node name="TituloCalc" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Display" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="Button7" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 0
+text = "7"
+
+[node name="Button8" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "8"
+
+[node name="Button9" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "9"
+
+[node name="BotonDiv" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "/"
+
+[node name="Button4" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "4"
+
+[node name="Button5" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "5"
+
+[node name="Button6" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "6"
+
+[node name="BotonMul" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "X"
+
+[node name="Button1" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "1"
+
+[node name="Button2" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "3"
+
+[node name="BotonResta" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "-"
+
+[node name="Boton0" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+text = "0"
+
+[node name="BotonPunto" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "."
+
+[node name="BotonIgual" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "="
+
+[node name="BotonSuma" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="Eliminar" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "C"
+
+[node name="BotonCerrarCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_right = 298.0
+offset_bottom = 31.0
+scale = Vector2(1.24244, 0.838516)
+theme_override_colors/font_disabled_color = Color(0.470483, 1.04684e-06, 2.64719e-07, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.975664, 4.57242e-06, 1.54018e-06, 1)
+theme_override_colors/font_hover_color = Color(0.956811, 3.32102e-06, 1.54018e-06, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.854181, 3.77826e-06, 7.70092e-07, 1)
+theme_override_colors/icon_normal_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0.85098, 0, 0.0392157, 1)
+text = "x"

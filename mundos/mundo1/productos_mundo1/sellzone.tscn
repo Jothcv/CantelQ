@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://by6fqsy5wfbou" path="res://sellzone.gd" id="1_8nx2p"]
 [ext_resource type="Texture2D" uid="uid://bwlrf88ir3vxr" path="res://img/productos/coin.png" id="2_8nx2p"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_36luj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nx2p"]
+size = Vector2(12.319, 11.6482)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hrck"]
 atlas = ExtResource("2_8nx2p")
@@ -20,8 +21,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8nx2p"]
-radius = 17.72
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hrck"]
+size = Vector2(34, 30)
 
 [node name="sellzone" type="StaticBody2D"]
 script = ExtResource("1_8nx2p")
@@ -30,8 +31,9 @@ script = ExtResource("1_8nx2p")
 scale = Vector2(2.78541, 2.44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.28393e-07, -9.77125e-08)
 scale = Vector2(0.990862, 0.985169)
-shape = SubResource("CircleShape2D_36luj")
+shape = SubResource("RectangleShape2D_8nx2p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(9.53674e-07, -4.76837e-07)
@@ -39,6 +41,7 @@ scale = Vector2(0.41, 0.35875)
 sprite_frames = SubResource("SpriteFrames_36luj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8nx2p")
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_7hrck")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
