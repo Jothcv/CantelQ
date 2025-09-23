@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd4ktr63vfj20"]
+
+[ext_resource type="Texture2D" uid="uid://c5pofqa6cuqte" path="res://img/buils/agua_1.png" id="1_e36p5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcdqx"]
+size = Vector2(188, 607)
+
+[node name="LIMIT" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(84, 293.5)
+shape = SubResource("RectangleShape2D_fcdqx")
+
+[node name="TextureRect" type="TextureRect" parent="CollisionShape2D"]
+offset_left = -81.0
+offset_top = -297.5
+offset_right = 79.0
+offset_bottom = -137.5
+scale = Vector2(1.05486, 3.72144)
+texture = ExtResource("1_e36p5")

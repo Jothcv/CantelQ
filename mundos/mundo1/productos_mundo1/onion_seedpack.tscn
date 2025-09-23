@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1bfw23g2ic5j"]
+
+[ext_resource type="Script" uid="uid://0x7q5sgblqoc" path="res://onion_seedpack.gd" id="1_e21i6"]
+[ext_resource type="Texture2D" uid="uid://bmy28kxm681rq" path="res://img/farmingTilesheetComplete.png" id="2_df4jl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou70t"]
+atlas = ExtResource("2_df4jl")
+region = Rect2(144, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vhcje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou70t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qyf65"]
+radius = 4.47214
+
+[node name="onion_seedpack" type="StaticBody2D"]
+script = ExtResource("1_e21i6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vhcje")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qyf65")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
