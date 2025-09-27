@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b43nharcxusia"]
+[gd_scene load_steps=35 format=4 uid="uid://b43nharcxusia"]
 
 [ext_resource type="PackedScene" uid="uid://ef8ywtu2nijo" path="res://mundos/mundo1/productos_mundo1/growingzone.tscn" id="1_28d11"]
 [ext_resource type="Script" uid="uid://dwju5fwaqm0aj" path="res://mundos/mundo1/world.gd" id="1_b8k52"]
@@ -12,10 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://bwlrf88ir3vxr" path="res://img/productos/coin.png" id="8_38r2r"]
 [ext_resource type="PackedScene" uid="uid://bc1tvilad6qm5" path="res://img/buils/tienda.tscn" id="11_38r2r"]
 [ext_resource type="PackedScene" uid="uid://bbmm478h2fimx" path="res://dialogues/ui_manager.tscn" id="12_2gwtw"]
+[ext_resource type="Resource" uid="uid://1jy6oaoltmxm" path="res://items/banano.tres" id="12_621re"]
+[ext_resource type="Texture2D" uid="uid://cac4a5k6chicc" path="res://img/buils/}2.png" id="12_sxs5g"]
+[ext_resource type="Resource" uid="uid://g8872i5gjy5c" path="res://items/fresa.tres" id="13_00jbn"]
+[ext_resource type="Resource" uid="uid://cai1feice46ur" path="res://items/limon.tres" id="14_fgc58"]
 [ext_resource type="Script" uid="uid://bcwfh5o8dl5oa" path="res://scripts/shelf.gd" id="14_j5w4f"]
+[ext_resource type="Texture2D" uid="uid://thf7nxle6d8m" path="res://img/buils/222.png" id="14_u0tyr"]
 [ext_resource type="Script" uid="uid://8e35qnse7sah" path="res://scripts/ItemData.gd" id="15_u0tyr"]
 [ext_resource type="Texture2D" uid="uid://bmy28kxm681rq" path="res://img/farmingTilesheetComplete.png" id="16_0k5up"]
-[ext_resource type="Texture2D" uid="uid://congw8uql3yb1" path="res://img/buils/}.png" id="17_j5w4f"]
+[ext_resource type="Resource" uid="uid://iwhljtd1e2gc" path="res://items/PanIntegral.tres" id="17_5v4ap"]
+[ext_resource type="Resource" uid="uid://dpe1ukvmrgnvj" path="res://items/panMolde.tres" id="18_3ovy3"]
+[ext_resource type="Resource" uid="uid://cfwkytbsyryee" path="res://items/panPeruano.tres" id="19_a7txi"]
+[ext_resource type="Resource" uid="uid://bq15igl1bvpvu" path="res://items/XECA.tres" id="20_a5pip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2gwtw"]
 texture = ExtResource("2_38r2r")
@@ -74,26 +82,36 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_621re"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqi0o"]
+size = Vector2(106, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxs5g"]
+size = Vector2(101, 11)
+
+[sub_resource type="Resource" id="Resource_vqi0o"]
 script = ExtResource("15_u0tyr")
-item_name = "gato"
-price = 15
-description = "dsdad"
+item_name = "frijol"
+price = 50
+description = "re varato pero ta ricooo weee"
 icon = ExtResource("16_0k5up")
 item_type = 0
 metadata/_custom_type_script = "uid://8e35qnse7sah"
 
-[sub_resource type="Resource" id="Resource_00jbn"]
+[sub_resource type="Resource" id="Resource_sxs5g"]
 script = ExtResource("15_u0tyr")
-item_name = "dsdsd"
-price = 52
-description = "dsadsad"
+item_name = "cebollin"
+price = 15
+description = "picante"
+icon = ExtResource("6_pso0u")
+item_type = 0
+
+[sub_resource type="Resource" id="Resource_j5w4f"]
+script = ExtResource("15_u0tyr")
+item_name = "zanahoria "
+price = 15
+description = "skibid"
 icon = ExtResource("7_38r2r")
 item_type = 0
-metadata/_custom_type_script = "uid://8e35qnse7sah"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqi0o"]
-size = Vector2(143, 146)
 
 [node name="world" type="Node2D" groups=["main"]]
 script = ExtResource("1_b8k52")
@@ -136,7 +154,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = "=0"
 
 [node name="tienda" parent="." instance=ExtResource("11_38r2r")]
-position = Vector2(965, 151)
+position = Vector2(962, 66)
 scale = Vector2(0.376562, 0.38125)
 
 [node name="carroticon" type="AnimatedSprite2D" parent="."]
@@ -152,15 +170,15 @@ sprite_frames = SubResource("SpriteFrames_s5slq")
 animation = &"onion"
 
 [node name="cointext" type="RichTextLabel" parent="."]
-offset_left = 882.0
-offset_top = 16.0
-offset_right = 1032.0
-offset_bottom = 66.0
+offset_left = 736.0
+offset_top = 9.0
+offset_right = 886.0
+offset_bottom = 59.0
 theme_override_font_sizes/normal_font_size = 25
 text = "=0"
 
 [node name="coinicon" type="AnimatedSprite2D" parent="."]
-position = Vector2(844, 36)
+position = Vector2(704, 29)
 scale = Vector2(0.46625, 0.480313)
 sprite_frames = SubResource("SpriteFrames_s5slq")
 animation = &"coin"
@@ -169,13 +187,545 @@ animation = &"coin"
 position = Vector2(-199, 396)
 scale = Vector2(5.28, 5.12)
 
+[node name="StantsssFrutas" type="Node2D" parent="."]
+
+[node name="stant1" type="Area2D" parent="StantsssFrutas"]
+position = Vector2(0, 150)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("12_621re"), ExtResource("13_00jbn"), ExtResource("14_fgc58")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant1"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssFrutas/stant1/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssFrutas/stant1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant1/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant2" type="Area2D" parent="StantsssFrutas"]
+position = Vector2(100, 150)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("12_621re"), ExtResource("13_00jbn"), ExtResource("14_fgc58")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant2"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssFrutas/stant2/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssFrutas/stant2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant2/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant3" type="Area2D" parent="StantsssFrutas"]
+position = Vector2(200, 150)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("12_621re"), ExtResource("13_00jbn"), ExtResource("14_fgc58")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant3"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssFrutas/stant3/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssFrutas/stant3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant3/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant4" type="Area2D" parent="StantsssFrutas"]
+position = Vector2(300, 150)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("12_621re"), ExtResource("13_00jbn"), ExtResource("14_fgc58")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant4"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssFrutas/stant4/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssFrutas/stant4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant4/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant5" type="Area2D" parent="StantsssFrutas"]
+position = Vector2(400, 150)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("12_621re"), ExtResource("13_00jbn"), ExtResource("14_fgc58")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant5"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssFrutas/stant5/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssFrutas/stant5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant5/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant6" type="Area2D" parent="StantsssFrutas"]
+position = Vector2(500, 150)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("12_621re"), ExtResource("13_00jbn"), ExtResource("14_fgc58")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant6"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssFrutas/stant6/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssFrutas/stant6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant6/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant7" type="Area2D" parent="StantsssFrutas"]
+position = Vector2(-100, 150)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("12_621re"), ExtResource("13_00jbn"), ExtResource("14_fgc58")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant7"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssFrutas/stant7/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssFrutas/stant7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssFrutas/stant7/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="StantsssVerduras" type="Node2D" parent="."]
+
+[node name="stant1" type="Area2D" parent="StantsssVerduras"]
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_vqi0o"), SubResource("Resource_sxs5g"), SubResource("Resource_j5w4f")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant1"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssVerduras/stant1/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssVerduras/stant1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant1/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant2" type="Area2D" parent="StantsssVerduras"]
+position = Vector2(100, 0)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_vqi0o"), SubResource("Resource_sxs5g"), SubResource("Resource_j5w4f")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant2"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssVerduras/stant2/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssVerduras/stant2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant2/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant3" type="Area2D" parent="StantsssVerduras"]
+position = Vector2(200, 0)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_vqi0o"), SubResource("Resource_sxs5g"), SubResource("Resource_j5w4f")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant3"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssVerduras/stant3/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssVerduras/stant3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant3/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant4" type="Area2D" parent="StantsssVerduras"]
+position = Vector2(300, 0)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_vqi0o"), SubResource("Resource_sxs5g"), SubResource("Resource_j5w4f")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant4"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssVerduras/stant4/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssVerduras/stant4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant4/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant5" type="Area2D" parent="StantsssVerduras"]
+position = Vector2(400, 0)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_vqi0o"), SubResource("Resource_sxs5g"), SubResource("Resource_j5w4f")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant5"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssVerduras/stant5/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssVerduras/stant5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant5/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant6" type="Area2D" parent="StantsssVerduras"]
+position = Vector2(-100, 0)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_vqi0o"), SubResource("Resource_sxs5g"), SubResource("Resource_j5w4f")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant6"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssVerduras/stant6/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssVerduras/stant6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant6/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant7" type="Area2D" parent="StantsssVerduras"]
+position = Vector2(500, 0)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_vqi0o"), SubResource("Resource_sxs5g"), SubResource("Resource_j5w4f")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant7"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="StantsssVerduras/stant7/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StantsssVerduras/stant7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StantsssVerduras/stant7/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="Stantssspanes" type="Node2D" parent="."]
+
+[node name="stant1" type="Area2D" parent="Stantssspanes"]
+position = Vector2(0, 300)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("17_5v4ap"), ExtResource("18_3ovy3"), ExtResource("19_a7txi"), ExtResource("20_a5pip")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant1"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stantssspanes/stant1/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stantssspanes/stant1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant1/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant2" type="Area2D" parent="Stantssspanes"]
+position = Vector2(100, 300)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("17_5v4ap"), ExtResource("18_3ovy3"), ExtResource("19_a7txi"), ExtResource("20_a5pip")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant2"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stantssspanes/stant2/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stantssspanes/stant2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant2/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant3" type="Area2D" parent="Stantssspanes"]
+position = Vector2(200, 300)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("17_5v4ap"), ExtResource("18_3ovy3"), ExtResource("19_a7txi"), ExtResource("20_a5pip")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant3"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stantssspanes/stant3/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stantssspanes/stant3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant3/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant4" type="Area2D" parent="Stantssspanes"]
+position = Vector2(300, 300)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("17_5v4ap"), ExtResource("18_3ovy3"), ExtResource("19_a7txi"), ExtResource("20_a5pip")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant4"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stantssspanes/stant4/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stantssspanes/stant4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant4/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant5" type="Area2D" parent="Stantssspanes"]
+position = Vector2(400, 300)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("17_5v4ap"), ExtResource("18_3ovy3"), ExtResource("19_a7txi"), ExtResource("20_a5pip")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant5"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stantssspanes/stant5/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stantssspanes/stant5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant5/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant6" type="Area2D" parent="Stantssspanes"]
+position = Vector2(500, 300)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("17_5v4ap"), ExtResource("18_3ovy3"), ExtResource("19_a7txi"), ExtResource("20_a5pip")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant6"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stantssspanes/stant6/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stantssspanes/stant6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant6/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
+[node name="stant7" type="Area2D" parent="Stantssspanes"]
+position = Vector2(-100, 300)
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([ExtResource("17_5v4ap"), ExtResource("18_3ovy3"), ExtResource("19_a7txi"), ExtResource("20_a5pip")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant7"]
+position = Vector2(294, 193)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stantssspanes/stant7/CollisionShape2D"]
+position = Vector2(-2, 62)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("12_sxs5g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stantssspanes/stant7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stantssspanes/stant7/StaticBody2D"]
+position = Vector2(295.5, 238.5)
+shape = SubResource("RectangleShape2D_sxs5g")
+
 [node name="player" parent="." instance=ExtResource("2_t3ywc")]
 position = Vector2(121, 72)
 platform_floor_layers = 4294967294
 platform_wall_layers = 254
 
+[node name="stantesuperiro(ops)" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(292, 168)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(392, 168)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D3" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(492, 168)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D4" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(592, 168)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D5" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(692, 168)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D6" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(792, 168)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D7" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(192, 168)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D8" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(192, 318)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D9" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(292, 318)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D10" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(392, 318)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D11" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(492, 318)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D12" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(592, 318)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D13" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(692, 318)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D14" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(792, 318)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D15" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(792, 468)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D16" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(692, 468)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D17" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(592, 468)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D18" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(492, 468)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D19" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(392, 468)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D20" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(292, 468)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
+[node name="Sprite2D21" type="Sprite2D" parent="stantesuperiro(ops)"]
+position = Vector2(192, 468)
+scale = Vector2(0.389444, 0.421684)
+texture = ExtResource("14_u0tyr")
+
 [node name="sellzone" parent="." instance=ExtResource("7_s5slq")]
-position = Vector2(140, 509)
+position = Vector2(-183, 555)
 scale = Vector2(2.6, 2.56)
 
 [node name="UiManager" parent="." instance=ExtResource("12_2gwtw")]
@@ -183,16 +733,3 @@ offset_left = 12.0
 offset_top = 7.0
 offset_right = 12.0
 offset_bottom = 7.0
-
-[node name="stant1" type="Area2D" parent="."]
-script = ExtResource("14_j5w4f")
-shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_621re"), SubResource("Resource_00jbn")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="stant1"]
-position = Vector2(796, 398)
-shape = SubResource("RectangleShape2D_vqi0o")
-
-[node name="Sprite2D" type="Sprite2D" parent="stant1/CollisionShape2D"]
-position = Vector2(4.5, -7)
-scale = Vector2(0.39375, 0.384375)
-texture = ExtResource("17_j5w4f")

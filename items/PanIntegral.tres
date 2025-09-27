@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://iwhljtd1e2gc"]
+
+[ext_resource type="Script" uid="uid://8e35qnse7sah" path="res://scripts/ItemData.gd" id="2_ujtbi"]
+
+[resource]
+script = ExtResource("2_ujtbi")
+item_name = "Pan Integral"
+price = 25
+description = "barato che"
+item_type = 0
+metadata/_custom_type_script = "uid://8e35qnse7sah"

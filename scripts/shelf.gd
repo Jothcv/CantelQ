@@ -3,7 +3,6 @@ class_name Shelf
 
 @export var shelf_products: Array[ItemData] = []
 @export var shelf_name: String = "Estante"
-
 var can_interact: bool = false
 var player_in_area: bool = false
 var interact_ui: Control
@@ -22,11 +21,12 @@ func _input(event):
 
 func create_interact_ui():
 	interact_ui = Control.new()
-	interact_ui.set_anchors_and_offsets_preset(Control.PRESET_CENTER) # centra la UI en su parent
-	interact_ui.mouse_filter = Control.MOUSE_FILTER_IGNORE # que no bloquee clicks
+	interact_ui.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	interact_ui.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
 	var label = Label.new()
 	label.text = "E"
-	label.add_theme_font_size_override("font_size", 100)
+	label.add_theme_font_size_override("font_size", 24)
 	label.add_theme_color_override("font_color", Color.WHITE)
 	label.add_theme_color_override("font_shadow_color", Color.BLACK)
 	label.add_theme_constant_override("shadow_offset_x", 1)
@@ -36,7 +36,7 @@ func create_interact_ui():
 	interact_ui.add_child(label)
 	add_child(interact_ui)
 	
-	interact_ui.position = Vector2(0, -50)  # Tamaño más pequeño
+	interact_ui.position = Vector2(0, -50)
 	interact_ui.size = Vector2(20, 20)
 	interact_ui.visible = false
 

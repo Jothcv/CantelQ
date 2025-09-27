@@ -47,10 +47,13 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="ItemsList" type="ScrollContainer" parent="MainPanel/VBox"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
+scroll_horizontal_custom_step = 2.0
+scroll_vertical_custom_step = 2.0
 
 [node name="ItemsVBox" type="VBoxContainer" parent="MainPanel/VBox/ItemsList"]
+custom_minimum_size = Vector2(250, 160)
 layout_mode = 2
 
 [node name="ButtonsHBox" type="HBoxContainer" parent="MainPanel/VBox"]

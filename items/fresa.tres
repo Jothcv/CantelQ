@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://g8872i5gjy5c"]
+
+[ext_resource type="Texture2D" uid="uid://crcngkm4kxmmh" path="res://img/buils/tienda2.png" id="1_1wbke"]
+[ext_resource type="Script" uid="uid://8e35qnse7sah" path="res://scripts/ItemData.gd" id="1_26xgk"]
+
+[resource]
+script = ExtResource("1_26xgk")
+item_name = "fresa"
+price = 5
+description = "rosadita"
+icon = ExtResource("1_1wbke")
+item_type = 0
+metadata/_custom_type_script = "uid://8e35qnse7sah"

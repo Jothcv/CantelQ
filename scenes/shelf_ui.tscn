@@ -22,17 +22,16 @@ color = Color(0.0987284, 0.0987284, 0.0987284, 0.0588235)
 
 [node name="ProductPanel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.307617
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.722656
 anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = -80.5
-offset_right = 92.0
-offset_bottom = 80.5
+offset_top = -171.0
+offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="VBox" type="VBoxContainer" parent="ProductPanel"]
 layout_mode = 1
@@ -44,11 +43,15 @@ grow_vertical = 2
 
 [node name="ShelfTitle" type="Label" parent="ProductPanel/VBox"]
 layout_mode = 2
+text = "dsd"
 
 [node name="ProductsScroll" type="ScrollContainer" parent="ProductPanel/VBox"]
+custom_minimum_size = Vector2(15, 250)
 layout_mode = 2
+size_flags_vertical = 10
 
 [node name="ProductsVBox" type="VBoxContainer" parent="ProductPanel/VBox/ProductsScroll"]
+custom_minimum_size = Vector2(425, 290)
 layout_mode = 2
 
 [node name="ButtonsHBox" type="HBoxContainer" parent="ProductPanel/VBox"]

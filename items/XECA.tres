@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bq15igl1bvpvu"]
+
+[ext_resource type="Texture2D" uid="uid://bwlrf88ir3vxr" path="res://img/productos/coin.png" id="1_dsajq"]
+[ext_resource type="Script" uid="uid://8e35qnse7sah" path="res://scripts/ItemData.gd" id="2_iogil"]
+
+[resource]
+script = ExtResource("2_iogil")
+item_name = "Xeca"
+price = 4
+description = "compra esto si amas a tu mama "
+icon = ExtResource("1_dsajq")
+item_type = 0
+metadata/_custom_type_script = "uid://8e35qnse7sah"
