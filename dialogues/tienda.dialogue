@@ -1,13 +1,144 @@
 ~ start
-Nathan: uhh. me presento me presento
-Nathan: yo te atendere en esta tienda ujuuunm
-- que haces? 
-	pues yo te vendere cosas de mi tienda JAJA 
-	pues soy un vendedoro comun y corriente no? JAJA...	
-- Te vendere cosas 
-	- Quieres vender todas tus cosas?
-		- si 
-		- no 
-- Empezar de nuveo => start
-- Terminar la conversacion  => END
+
+Nathan: *con una sonrisa sospechosa* ¡Ah, un cliente! Bienvenido, bienvenido...
+Nathan: Me llamo Nathan y soy el... *tose* ...honesto dueño de esta tienda.
+Nathan: Veo que traes algunos productos ahí. ¿Listos para pagar?
+
+- ¿Qué tal si revisamos los precios juntos?
+	Nathan: *se pone nervioso* ¿Revisar? No, no, no... Los precios están muy claros, amigo.
+	Nathan: Confía en mí, llevo años en este negocio. *ríe forzadamente*
+	=> pricing_discussion
+
+- Quiero vender todo lo que traigo
+	Nathan: ¡Perfecto! Un cliente directo, me gusta eso.
+	Nathan: Déjame calcular... *hace gestos dramáticos* 
+	Nathan: El total de tus {{GameManager.get_items_count()}} productos es... ¡${{GameManager.get_fake_total()}}! ¿Qué dices?
+	=> final_offer
+
+- Solo estaba curioseando...
+	Nathan: *cara de decepción* Ah... bueno, si cambias de opinión ya sabes dónde encontrarme.
+	Nathan: Pero recuerda, ¡mis precios son los mejores de la ciudad! *guiño sospechoso*
+	=> END
+
+~ pricing_discussion
+
+Nathan: Mira, joven, yo tengo mucha experiencia en esto...
+Nathan: Los precios incluyen... eh... *sudando* ...gastos de mantenimiento, almacenaje...
+Nathan: ¡Y no olvides los impuestos! El IVA es... ¿cuánto era? ¡Ah sí! ¡El 15%!
+
+- El IVA es 12%, no 15%
+	Nathan: *se pone más nervioso* ¿12%? ¡Psh! Los impuestos cambian todo el tiempo...
+	Nathan: Además, tengo que cubrir mis gastos operativos, ¿entiendes?
+	=> suspicious_behavior
+
+- Está bien, acepto tus precios
+	Nathan: *aliviado* ¡Excelente! Sabía que eras una persona razonable.
+	=> final_offer
+
+~ suspicious_behavior
+
+Nathan: *mirando hacia los lados* Escucha, amigo... 
+Nathan: Este es un negocio honesto. Pregúntale a cualquiera del pueblo.
+Nathan: Mis precios son... competitivos. ¡Muy competitivos!
+
+- Creo que me estás estafando
+	Nathan: ¡¿ESTAFANDO?! *grita* ¡Cómo te atreves!
+	Nathan: *se calma rápidamente* Digo... ¿por qué piensas eso? 
+	Nathan: Los precios son los que son, amigo. La economía está difícil...
+	=> confrontation_choice
+
+- Mejor vamos al grano entonces
+	Nathan: *suspira* Está bien, está bien... 
+	=> final_offer
+
+~ final_offer
+
+Nathan: Entonces... *frotándose las manos* 
+Nathan: Tu total es ${{GameManager.get_fake_total()}}. Un precio muy justo, diría yo.
+Nathan: ¿Qué dices? ¿Trato hecho?
+
+- ¡Espera! Quiero verificar los cálculos
+	Nathan: *pánico en los ojos* ¿V-verificar? ¿Para qué? 
+	Nathan: Los números no mienten, amigo... *ríe nerviosamente*
+	Nathan: ${{GameManager.get_fake_total()}} por {{GameManager.get_items_count()}} productos. ¡Es matemática simple!
+	=> confrontation_choice
+
+- Acepto el trato
+	Nathan: *demasiado entusiasmado* ¡PERFECTO! ¡Trato hecho! 
+	Nathan: *susurrando* Otro cliente satisfecho... *ríe maliciosamente*
+	Nathan: ¡${{GameManager.get_fake_total()}} bien ganados! ¡JAJAJA!
+	GameManager.player_loses()
+	=> defeat
+
+- No tengo suficiente dinero
+	Nathan: *decepcionado* Ah... bueno, cuando tengas los ${{GameManager.get_fake_total()}} completos, regresa.
+	Nathan: ¡Pero mis precios pueden subir! *amenazante*
+	=> END
+
+~ confrontation_choice
+
+Nathan: *sudando profusamente* Mira, no entiendo por qué dudas de mí...
+Nathan: Soy un comerciante respetable con una reputación que mantener...
+Nathan: Los {{GameManager.get_items_count()}} productos que tienes valen ${{GameManager.get_fake_total()}}. ¡Es justo!
+Nathan: ¿Qué tal si... llegamos a un acuerdo rápido? Sin complicaciones.
+
+- ¡Basta de mentiras! Sé cuánto debería pagar realmente
+	Nathan: *pánico total* ¡No sé de qué hablas! ¡Estos son precios justos!
+	Nathan: *temblando* ${{GameManager.get_fake_total()}} es lo que debes... pero... pero si insistes en hacer cálculos... 
+	Nathan: ¡Adelante! ¡Demuéstrame que estoy equivocado!
+	call start_confrontation_from_dialogue()
+	=> END
+
+- Tienes razón, perdón por dudar
+	Nathan: *aliviado pero sospechoso* Ah... sí... bueno...
+	Nathan: Los malentendidos pasan. Ahora, ¿pagamos los ${{GameManager.get_fake_total()}}?
+	=> final_offer
+
+- Mejor me voy y vuelvo después
+	Nathan: *ansioso* ¡No, no! No hace falta irse...
+	Nathan: Podemos resolver esto ahora mismo. ${{GameManager.get_fake_total()}} y listo. ¿Qué dices?
+	=> final_offer
+
+~ victory
+
+Nathan: *completamente derrotado* ¡No puede ser! ¿C-cómo sabías los precios reales?
+Nathan: *llorando* ¡Está bien, está bien! ¡Tienes razón! 
+Nathan: He estado estafando a la gente durante años... *sollozos*
+Nathan: Intenté cobrarte ${{GameManager.get_fake_total()}} cuando solo debías pagar ${{GameManager.get_real_total_with_iva_int()}}...
+Nathan: Tú... tú eres el primer cliente que se da cuenta...
+Nathan: Me rindo. Toma tu dinero y vete... *avergonzado*
+
+¡FELICITACIONES! ¡Desenmascaraste al estafador Nathan!
+¡Evitaste que te estafara ${{GameManager.get_overcharge_amount_int()}}!
+¡Has demostrado que las matemáticas y la atención pueden vencer la deshonestidad!
+
+GameManager.player_wins()
 => END
+
+~ defeat
+
+Nathan: *sonrisa malévola* ¡JAJAJA! ¡Sabía que no te darías cuenta!
+Nathan: Otro cliente más que cae en mi trampa... 
+Nathan: *contando dinero* Te cobré ${{GameManager.get_fake_total()}} cuando solo debías ${{GameManager.get_real_total_with_iva_int()}}!
+Nathan: ¡Los números te confundieron, ¿verdad?! ¡Me robé ${{GameManager.get_overcharge_amount_int()}} extra!
+Nathan: ¡Ven cuando quieras! ¡Siempre tengo "ofertas especiales"! *carcajada diabólica*
+
+¡OH NO! ¡Nathan te estafó ${{GameManager.get_overcharge_amount_int()}}! 
+¡Tendrás que intentar de nuevo con más cuidado en los cálculos!
+
+call restart_game_from_dialogue()
+=> END
+
+~ restart_option
+
+Nathan: *aburrido* ¿Otra vez tú? Pensé que habías aprendido la lección...
+Nathan: Bueno, si insistes... ¡Tengo productos nuevos con precios "especiales"!
+
+- ¡Esta vez te voy a atrapar!
+	Nathan: *ríe* ¡Ya veremos, ya veremos! ¡Los números no mienten!
+	call restart_game_from_dialogue()
+	=> END
+
+- Mejor me voy
+	Nathan: *burlón* ¡Cobarde! ¡Seguro que no puedes con las matemáticas!
+	=> END

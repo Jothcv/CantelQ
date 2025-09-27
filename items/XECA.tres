@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_iogil")
-item_name = "Xeca"
+item_name = "XECA"
 price = 4
 description = "compra esto si amas a tu mama "
 icon = ExtResource("1_dsajq")

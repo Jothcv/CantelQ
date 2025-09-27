@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("2_ujtbi")
-item_name = "Pan Integral"
+item_name = "PanIntegral"
 price = 25
 description = "barato che"
 item_type = 0

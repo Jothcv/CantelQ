@@ -20,6 +20,7 @@ Global="*res://global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 InventoryManager="*res://scripts/InventoryManager.gd"
 ShoppingListManager="*res://scripts/ShoppingListManager.gd"
+GameManager="*res://scripts/GameManager.gd"
 
 [display]
 

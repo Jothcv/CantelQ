@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_ioc4b")
-item_name = "pan peruano"
+item_name = "panPeruano "
 price = 12
 description = "compra pe mano"
 icon = ExtResource("1_7pek7")
