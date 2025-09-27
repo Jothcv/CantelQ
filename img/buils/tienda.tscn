@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc1tvilad6qm5"]
+
+[ext_resource type="Texture2D" uid="uid://3abnrs55tdon" path="res://img/productos/tienda2.png" id="1_6481x"]
+[ext_resource type="Script" uid="uid://dnc7fypowy1sy" path="res://scripts/NPC_Interaction_tienda.gd" id="2_u4ljf"]
+[ext_resource type="Resource" uid="uid://bdqbogjvohnci" path="res://dialogues/tienda.dialogue" id="3_v7wbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4ljf"]
+size = Vector2(129, 128.164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7wbv"]
+size = Vector2(145, 95)
+
+[node name="tienda" type="Sprite2D"]
+texture = ExtResource("1_6481x")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_u4ljf")
+dialogue_resource = ExtResource("3_v7wbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7, 1.81669)
+scale = Vector2(1.52993, 1.22993)
+shape = SubResource("RectangleShape2D_u4ljf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, -1)
+shape = SubResource("RectangleShape2D_v7wbv")

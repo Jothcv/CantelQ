@@ -7,7 +7,10 @@ var animated_sprite: AnimatedSprite2D
 
 func _ready() -> void:
 	animated_sprite = $AnimatedSprite2D
-
+	
+func is_player():
+	return true
+	
 func _physics_process(delta: float) -> void:
 	var input_vector = Vector2.ZERO
 

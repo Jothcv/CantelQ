@@ -1,0 +1,13 @@
+~ start
+Nathan: uhh. me presento me presento
+Nathan: yo te atendere en esta tienda ujuuunm
+- que haces? 
+	pues yo te vendere cosas de mi tienda JAJA 
+	pues soy un vendedoro comun y corriente no? JAJA...	
+- Te vendere cosas 
+	- Quieres vender todas tus cosas?
+		- si 
+		- no 
+- Empezar de nuveo => start
+- Terminar la conversacion  => END
+=> END
