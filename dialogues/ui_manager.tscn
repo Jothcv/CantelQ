@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bbmm478h2fimx"]
+
+[node name="UiManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUDContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ControlesLabel" type="Label" parent="HUDContainer"]
+layout_mode = 2
+text = "T-Calculadora | L-Lista | F-Agarrar | i-Inventario "
+
+[node name="DineroLabel" type="Label" parent="HUDContainer"]
+layout_mode = 2
+text = "Dinero Ahorrado:"
+
+[node name="Label" type="Label" parent="HUDContainer"]
+layout_mode = 2
+text = "listas completadas: "

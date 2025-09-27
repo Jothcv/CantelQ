@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b43nharcxusia"]
+[gd_scene load_steps=25 format=4 uid="uid://b43nharcxusia"]
 
 [ext_resource type="PackedScene" uid="uid://ef8ywtu2nijo" path="res://mundos/mundo1/productos_mundo1/growingzone.tscn" id="1_28d11"]
 [ext_resource type="Script" uid="uid://dwju5fwaqm0aj" path="res://mundos/mundo1/world.gd" id="1_b8k52"]
@@ -11,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bkqc4gcl82ac" path="res://mundos/mundo1/productos_mundo1/sellzone.tscn" id="7_s5slq"]
 [ext_resource type="Texture2D" uid="uid://bwlrf88ir3vxr" path="res://img/productos/coin.png" id="8_38r2r"]
 [ext_resource type="PackedScene" uid="uid://bc1tvilad6qm5" path="res://img/buils/tienda.tscn" id="11_38r2r"]
+[ext_resource type="PackedScene" uid="uid://bbmm478h2fimx" path="res://dialogues/ui_manager.tscn" id="12_2gwtw"]
+[ext_resource type="Script" uid="uid://bcwfh5o8dl5oa" path="res://scripts/shelf.gd" id="14_j5w4f"]
+[ext_resource type="Script" uid="uid://8e35qnse7sah" path="res://scripts/ItemData.gd" id="15_u0tyr"]
+[ext_resource type="Texture2D" uid="uid://bmy28kxm681rq" path="res://img/farmingTilesheetComplete.png" id="16_0k5up"]
+[ext_resource type="Texture2D" uid="uid://congw8uql3yb1" path="res://img/buils/}.png" id="17_j5w4f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2gwtw"]
 texture = ExtResource("2_38r2r")
@@ -69,7 +74,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="world" type="Node2D"]
+[sub_resource type="Resource" id="Resource_621re"]
+script = ExtResource("15_u0tyr")
+item_name = "gato"
+price = 15
+description = "dsdad"
+icon = ExtResource("16_0k5up")
+item_type = 0
+metadata/_custom_type_script = "uid://8e35qnse7sah"
+
+[sub_resource type="Resource" id="Resource_00jbn"]
+script = ExtResource("15_u0tyr")
+item_name = "dsdsd"
+price = 52
+description = "dsadsad"
+icon = ExtResource("7_38r2r")
+item_type = 0
+metadata/_custom_type_script = "uid://8e35qnse7sah"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqi0o"]
+size = Vector2(143, 146)
+
+[node name="world" type="Node2D" groups=["main"]]
 script = ExtResource("1_b8k52")
 
 [node name="backgorund" type="TileMapLayer" parent="."]
@@ -108,6 +134,10 @@ offset_right = 989.0
 offset_bottom = 524.0
 theme_override_font_sizes/normal_font_size = 25
 text = "=0"
+
+[node name="tienda" parent="." instance=ExtResource("11_38r2r")]
+position = Vector2(965, 151)
+scale = Vector2(0.376562, 0.38125)
 
 [node name="carroticon" type="AnimatedSprite2D" parent="."]
 position = Vector2(910.463, 565.475)
@@ -148,5 +178,21 @@ platform_wall_layers = 254
 position = Vector2(140, 509)
 scale = Vector2(2.6, 2.56)
 
-[node name="tienda" parent="." instance=ExtResource("11_38r2r")]
-position = Vector2(910, 244)
+[node name="UiManager" parent="." instance=ExtResource("12_2gwtw")]
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 12.0
+offset_bottom = 7.0
+
+[node name="stant1" type="Area2D" parent="."]
+script = ExtResource("14_j5w4f")
+shelf_products = Array[ExtResource("15_u0tyr")]([SubResource("Resource_621re"), SubResource("Resource_00jbn")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stant1"]
+position = Vector2(796, 398)
+shape = SubResource("RectangleShape2D_vqi0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="stant1/CollisionShape2D"]
+position = Vector2(4.5, -7)
+scale = Vector2(0.39375, 0.384375)
+texture = ExtResource("17_j5w4f")

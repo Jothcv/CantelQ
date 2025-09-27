@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8ih3tv06s866"]
+
+[ext_resource type="Script" uid="uid://bcwfh5o8dl5oa" path="res://scripts/shelf.gd" id="1_wvsku"]
+[ext_resource type="Texture2D" uid="uid://congw8uql3yb1" path="res://img/buils/}.png" id="2_dw7gs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el71d"]
+size = Vector2(44, 43)
+
+[node name="Shelf" type="Area2D"]
+position = Vector2(10, 11)
+scale = Vector2(0.530494, 0.360518)
+script = ExtResource("1_wvsku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8147e-06, 1.90735e-06)
+shape = SubResource("RectangleShape2D_el71d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, 1.90735e-06)
+scale = Vector2(0.147222, 0.133889)
+texture = ExtResource("2_dw7gs")

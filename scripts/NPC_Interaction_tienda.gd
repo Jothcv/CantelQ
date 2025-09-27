@@ -38,7 +38,7 @@ func create_interact_ui():
 	# Crear el label con la "E"
 	var label = Label.new()
 	label.text = "E"
-	label.add_theme_font_size_override("font_size", 24)
+	label.add_theme_font_size_override("font_size", 44)
 	label.add_theme_color_override("font_color", Color.WHITE)
 	label.add_theme_color_override("font_shadow_color", Color.BLACK)
 	label.add_theme_constant_override("shadow_offset_x", 2)

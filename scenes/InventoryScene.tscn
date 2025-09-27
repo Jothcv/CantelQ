@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfpqpcgb0at6b"]
+
+[ext_resource type="Script" uid="uid://00mf6tha5tbp" path="res://scripts/inventory_scene.gd" id="1_ew0w2"]
+
+[node name="InventoryScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ew0w2")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0987284, 0.0987284, 0.0987284, 0.0588235)
+
+[node name="MainPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = -118.0
+offset_right = 128.5
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="MainPanel/VBox"]
+layout_mode = 2
+
+[node name="ItemsList" type="ScrollContainer" parent="MainPanel/VBox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="ItemsVBox" type="VBoxContainer" parent="MainPanel/VBox/ItemsList"]
+layout_mode = 2
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="MainPanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="MainPanel/VBox/ButtonsHBox"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+text = "Cerrar I"
