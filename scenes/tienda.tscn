@@ -1,7 +1,12 @@
-extends Area2D
+[gd_scene load_steps=6 format=3 uid="uid://3hi6hifcc67y"]
+
+[ext_resource type="Resource" uid="uid://bdqbogjvohnci" path="res://dialogues/tienda.dialogue" id="2_0wul1"]
+
+[sub_resource type="GDScript" id="GDScript_2puif"]
+script/source = "extends Area2D
 
 @export var dialogue_resource: DialogueResource
-@export var dialogue_start: String = "start"
+@export var dialogue_start: String = \"start\"
 
 var can_interact: bool = false
 var player_in_area: bool = false
@@ -20,27 +25,24 @@ func _ready():
 	GameManager.game_lost.connect(_on_game_lost)
 
 func _input(event):
-	if event.is_action_pressed("interact") and player_in_area:
-		start_dialogue()
-		
-	#if event.is_action_pressed("interact") and can_interact and player_in_area:
+	if event.is_action_pressed(\"interact\") and can_interact and player_in_area:
 		# Verificar si el jugador tiene productos
-		#if InventoryManager.inventory_items.is_empty():
-			#print("¡Necesitas productos para vender!")
-			#return
+		if InventoryManager.inventory_items.is_empty():
+			print(\"¡Necesitas productos para vender!\")
+			return
 		
-		#start_dialogue()
+		start_dialogue()
 
 func create_interact_ui():
 	interact_ui = Control.new()
 	
 	var label = Label.new()
-	label.text = "E"
-	label.add_theme_font_size_override("font_size", 24)
-	label.add_theme_color_override("font_color", Color.WHITE)
-	label.add_theme_color_override("font_shadow_color", Color.BLACK)
-	label.add_theme_constant_override("shadow_offset_x", 2)
-	label.add_theme_constant_override("shadow_offset_y", 2)
+	label.text = \"E\"
+	label.add_theme_font_size_override(\"font_size\", 24)
+	label.add_theme_color_override(\"font_color\", Color.WHITE)
+	label.add_theme_color_override(\"font_shadow_color\", Color.BLACK)
+	label.add_theme_constant_override(\"shadow_offset_x\", 2)
+	label.add_theme_constant_override(\"shadow_offset_y\", 2)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	
@@ -51,7 +53,7 @@ func create_interact_ui():
 
 func start_dialogue():
 	if dialogue_resource == null:
-		print("No hay diálogo asignado!")
+		print(\"No hay diálogo asignado!\")
 		return	
 	
 	# Establecer variables del diálogo
@@ -68,8 +70,8 @@ func setup_dialogue_variables():
 	var totals = GameManager.calculate_correct_totals()
 	var items_count = GameManager.get_collected_items_count()
 	
-	get_tree().set_meta("dialogue_items_count", items_count)
-	get_tree().set_meta("dialogue_fake_total", totals.fake_total)
+	get_tree().set_meta(\"dialogue_items_count\", items_count)
+	get_tree().set_meta(\"dialogue_fake_total\", totals.fake_total)
 	
 func show_confrontation_ui():
 	if confrontation_ui:
@@ -83,40 +85,40 @@ func show_confrontation_ui():
 	
 	var vbox = VBoxContainer.new()
 	vbox.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	vbox.add_theme_constant_override("separation", 15)
+	vbox.add_theme_constant_override(\"separation\", 15)
 	
 	# Título
 	var title = Label.new()
-	title.text = "¡MOMENTO DE LA VERDAD!"
-	title.add_theme_font_size_override("font_size", 20)
+	title.text = \"¡MOMENTO DE LA VERDAD!\"
+	title.add_theme_font_size_override(\"font_size\", 20)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_color_override("font_color", Color.RED)
+	title.add_theme_color_override(\"font_color\", Color.RED)
 	vbox.add_child(title)
 	
 	# Instrucciones
 	var instructions = Label.new()
-	instructions.text = "Ingresa tus cálculos para confrontar al vendedor:"
+	instructions.text = \"Ingresa tus cálculos para confrontar al vendedor:\"
 	instructions.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(instructions)
 	
 	# Input para total con IVA
 	var total_label = Label.new()
-	total_label.text = "Total real con IVA que deberías pagar:"
+	total_label.text = \"Total real con IVA que deberías pagar:\"
 	vbox.add_child(total_label)
 	
 	var total_input = LineEdit.new()
-	total_input.name = "TotalInput"
-	total_input.placeholder_text = "Ej: 45.67"
+	total_input.name = \"TotalInput\"
+	total_input.placeholder_text = \"Ej: 45.67\"
 	vbox.add_child(total_input)
 	
 	# Input para estafa
 	var overcharge_label = Label.new()
-	overcharge_label.text = "Dinero que intentó estafarte:"
+	overcharge_label.text = \"Dinero que intentó estafarte:\"
 	vbox.add_child(overcharge_label)
 	
 	var overcharge_input = LineEdit.new()
-	overcharge_input.name = "OverchargeInput"
-	overcharge_input.placeholder_text = "Ej: 15.32"
+	overcharge_input.name = \"OverchargeInput\"
+	overcharge_input.placeholder_text = \"Ej: 15.32\"
 	vbox.add_child(overcharge_input)
 	
 	# Botones
@@ -124,12 +126,12 @@ func show_confrontation_ui():
 	button_hbox.alignment = BoxContainer.ALIGNMENT_CENTER
 	
 	var confront_button = Button.new()
-	confront_button.text = "¡CONFRONTAR!"
+	confront_button.text = \"¡CONFRONTAR!\"
 	confront_button.pressed.connect(_on_confront_pressed)
 	button_hbox.add_child(confront_button)
 	
 	var cancel_button = Button.new()
-	cancel_button.text = "Cancelar"
+	cancel_button.text = \"Cancelar\"
 	cancel_button.pressed.connect(_on_cancel_confrontation)
 	button_hbox.add_child(cancel_button)
 	
@@ -138,14 +140,14 @@ func show_confrontation_ui():
 	get_tree().root.add_child(confrontation_ui)
 
 func _on_confront_pressed():
-	var total_input = confrontation_ui.find_child("TotalInput") as LineEdit
-	var overcharge_input = confrontation_ui.find_child("OverchargeInput") as LineEdit
+	var total_input = confrontation_ui.find_child(\"TotalInput\") as LineEdit
+	var overcharge_input = confrontation_ui.find_child(\"OverchargeInput\") as LineEdit
 	
 	var player_total = total_input.text.to_float()
 	var player_overcharge = overcharge_input.text.to_float()
 	
 	if player_total <= 0 or player_overcharge < 0:
-		print("Ingresa valores válidos")
+		print(\"Ingresa valores válidos\")
 		return
 	
 	var is_correct = GameManager.check_player_answer(player_total, player_overcharge)
@@ -167,30 +169,30 @@ func hide_confrontation_ui():
 
 func show_victory_dialogue():
 	# Mostrar diálogo de victoria
-	DialogueManager.show_dialogue_balloon(dialogue_resource, "victory")
+	DialogueManager.show_dialogue_balloon(dialogue_resource, \"victory\")
 
 func show_defeat_dialogue():
 	# Mostrar diálogo de derrota
-	DialogueManager.show_dialogue_balloon(dialogue_resource, "defeat")
+	DialogueManager.show_dialogue_balloon(dialogue_resource, \"defeat\")
 
 func _on_game_won():
-	print("¡Felicitaciones! ¡Desenmascaraste al estafador!")
+	print(\"¡Felicitaciones! ¡Desenmascaraste al estafador!\")
 
 func _on_game_lost():
-	print("¡Mejor suerte la próxima vez!")
+	print(\"¡Mejor suerte la próxima vez!\")
 
 func _on_body_entered(body):
-	print("Script de tienda cargado")
+	print(\"Script de tienda cargado\")
 	set_process_input(true)
 	
-	if body.has_method("is_player") or body.is_in_group("player"):
+	if body.has_method(\"is_player\") or body.is_in_group(\"player\"):
 		player_in_area = true
 		player_reference = body
 		show_interact_prompt()
 
 func _on_body_exited(body):
-	print("jugador fuera")
-	if body.has_method("is_player") or body.is_in_group("player"):
+	print(\"jugador fuera\")
+	if body.has_method(\"is_player\") or body.is_in_group(\"player\"):
 		player_in_area = false
 		player_reference = null
 		hide_interact_prompt()
@@ -213,3 +215,33 @@ func start_confrontation_from_dialogue():
 
 func restart_game_from_dialogue():
 	GameManager.reset_game()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbc78"]
+size = Vector2(221, 173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2puif"]
+size = Vector2(120, 309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wul1"]
+size = Vector2(300, 77)
+
+[node name="tienda" type="Sprite2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_2puif")
+dialogue_resource = ExtResource("2_0wul1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(100.5, 76.5)
+shape = SubResource("RectangleShape2D_hbc78")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(96, 1)
+shape = SubResource("RectangleShape2D_2puif")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(11, -118.5)
+shape = SubResource("RectangleShape2D_0wul1")

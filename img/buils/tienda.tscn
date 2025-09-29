@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc1tvilad6qm5"]
+[gd_scene load_steps=7 format=3 uid="uid://bc1tvilad6qm5"]
 
-[ext_resource type="Texture2D" uid="uid://clifv55juan2c" path="res://img/buils/tiendaVdd.png" id="1_v7wbv"]
+[ext_resource type="Texture2D" uid="uid://bjl1ievyddgxi" path="res://img/buils/tiendaFinalBoss.png" id="1_v7wbv"]
 [ext_resource type="Script" uid="uid://dnc7fypowy1sy" path="res://scripts/NPC_Interaction_tienda.gd" id="2_u4ljf"]
 [ext_resource type="Resource" uid="uid://bdqbogjvohnci" path="res://dialogues/tienda.dialogue" id="3_v7wbv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4ljf"]
-size = Vector2(359.494, 381.323)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8luf"]
+size = Vector2(400, 397)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7wbv"]
-size = Vector2(314, 309)
+size = Vector2(120, 309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdu7f"]
+size = Vector2(300, 77)
 
 [node name="tienda" type="Sprite2D"]
 texture = ExtResource("1_v7wbv")
@@ -18,12 +21,15 @@ script = ExtResource("2_u4ljf")
 dialogue_resource = ExtResource("3_v7wbv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-16, -7.50001)
-scale = Vector2(1.52993, 1.22993)
-shape = SubResource("RectangleShape2D_u4ljf")
+position = Vector2(2, -23.5)
+shape = SubResource("RectangleShape2D_i8luf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1, -0.5)
+position = Vector2(96, 1)
 shape = SubResource("RectangleShape2D_v7wbv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(11, -118.5)
+shape = SubResource("RectangleShape2D_cdu7f")
